@@ -25,9 +25,11 @@ public class LeonTest {
     public void testGetPet() {
         // given
         Leon leon = new Leon();
+
         PetOwner leonAsPetOwner = ((PetOwner)(Object)leon);
         String expectedPetName = "Milo";
         Integer expectedPetAge = 6;
+        leon.setPet(new Pet(expectedPetName, expectedPetAge));
 
         // when
         Pet pet = leonAsPetOwner.getPet();
@@ -44,6 +46,7 @@ public class LeonTest {
         Person leonAsPerson = (Person)((Object)leon);
         String expectedFirstName = "Leon";
         String expectedLastName = "Hunter";
+
 
         // when
         String actualFirstName = leonAsPerson.getFirstName();
